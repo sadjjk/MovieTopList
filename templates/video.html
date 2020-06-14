@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="referrer" content="never">
+    <title>今日视频Top榜单</title>
+    <link  rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<a href="{{ origin_url }}" target="_blank">
+    <img class="origin-img" src="{{ origin_img_url }}">
+</a>
+<div class="reveal">{{ top_name }}</div>
+{% if update_desc %}
+    <div class="update_desc">{{ update_desc }}</div>
+{% endif %}
+
+<div class="content">
+    {% for video in content %}
+        <div class="video-info">
+            <div class="video-rank-num">{{ video['index'] }}</div>
+            <div class="video-content">
+                <div class="post-img" onclick="window.open('{{ video['url'] }}')">
+                    <div class="left-post">
+
+                        <a href="{{ video['url'] }}" target="_blank">
+                            <img class="left-post-img" src="{{ video.get('post') }}">
+                        </a>
+                    </div>
+                    {% if video['card_subtitle'] %}
+                    <div class="right-post" onclick="window.open('{{ video['url'] }}')" >
+                    {% else %}
+                    <div class="right-post" onclick="window.open('{{ video['url'] }}')" style="pointer-events: none;">
+                    {% endif %}
+                        <div class="right-post-img"
+                             style="background-image: url(&quot;{{ video['pic'] }}&quot;);
+                                    background-size: cover"></div>
+                        <div class="label-div">
+                            {% for manual_tag in video['manual_tags'] %}
+                                {% if manual_tag != '' %}
+                                    <div class="label label-style1">
+                                        <span>{{ manual_tag }}</span>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            {% for continuous_tag in video['continuous_tags'] %}
+                                {% if continuous_tag != '' %}
+                                    <div class="label label-style2">
+                                        <span>{{ continuous_tag }}</span>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="video-attribute">{{ video['card_subtitle'] }}</div>
+                        <div class="video-describe ">{{ video['description'] }}</div>
+
+                    </div>
+                </div>
+                <div class="video-rate">{{ video['rate'] }}</div>
+                <div class="video-title">{{ video['title'] }}</div>
+
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<ul class="float-text-menu">
+    {% for item in all_list %}
+        {% if item['name'] == top_name %}
+            <li><a href="{{ item['url'] }}" style="color: #ffac2d;margin-left: -{{ 25* item['name_len'] - 35 }}px;">{{ item['name'] }}</a></li>
+        {% else %}
+            <li><a href="{{ item['url'] }}"
+                   onmouseover="this.style.marginLeft='-{{ 25* item['name_len'] - 35 }}px'"
+                   onmouseout="this.style.marginLeft='0px'">{{ item['name'] }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<div class="feedback">
+  <a class="feedback-item" href="http://www.wjinyu.top:233/" target="_blank"  data-inverted="" data-tooltip="点击访问Bilibili视频下载" data-position="right center" >
+    <img src="/images/bilibili_small.png" >
+  </a>
+  <a class="feedback-item" href="https://github.com/sadjjk" target="_blank"  data-inverted="" data-tooltip="点击访问Github" data-position="right center" >
+    <img src="/images/github.png" >
+  </a>
+  <a class="feedback-item" href="https://sadjjk.github.io" target="_blank"  data-inverted="" data-tooltip="点击访问个人博客" data-position="right center" >
+    <img src="/images/home.png" >
+  </a>
+</div>
+<script src="/js/script.js"></script>
+</body>
+</html>
