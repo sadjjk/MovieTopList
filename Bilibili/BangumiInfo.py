@@ -53,7 +53,6 @@ class BangumiInfo:
             season_id = re.findall(r'"season_id":(\d+)', content)
             season_id = season_id[0] if season_id else ''
 
-        pic_url = ''
         season_api_url = 'https://api.bilibili.com/pgc/web/season/section?season_id=' + str(season_id)
         response = requests.get(season_api_url, headers=headers)
         assert response.status_code == 200, '地址:{} 连接异常'.format(season_api_url)

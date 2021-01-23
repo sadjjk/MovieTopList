@@ -49,14 +49,14 @@ DoubanVideoTopList = [
         "update_desc": "每周二更新"
     },
     {
-        "name": "最高评分华语电影",
-        "url": "https://m.douban.com/rexxar/api/v2/subject_collection/3760/items?start=0&count=50&items_only=1&for_mobile=1",
-        "referer": "https://m.douban.com/subject_collection/3760?dt_dapp=1",
+        "name": "华语电影-2020高分榜",
+        "url": "https://m.douban.com/rexxar/api/v2/subject_collection/EC2A5MRIY/items?start=0&count=50&items_only=1&for_mobile=1",
+        "referer": "https://m.douban.com/subject_collection/EC2A5MRIY?dt_dapp=1",
     },
     {
-        "name": "最高评分外语电影",
-        "url": "https://m.douban.com/rexxar/api/v2/subject_collection/3761/items?start=0&count=50&items_only=1&for_mobile=1",
-        "referer": "https://m.douban.com/subject_collection/3761?dt_dapp=1",
+        "name": "外语电影-2020高分榜",
+        "url": "https://m.douban.com/rexxar/api/v2/subject_collection/ECIU5HIEQ/items?start=0&count=50&items_only=1&for_mobile=1",
+        "referer": "https://m.douban.com/subject_collection/ECIU5HIEQ?dt_dapp=1",
     },
     {
         "name": "全球电影票房榜",
@@ -82,9 +82,9 @@ DoubanVideoTopList = [
         "update_desc": "排名不分先后"
     },
     {
-        "name": "年度冷门佳作",
-        "url": "https://m.douban.com/rexxar/api/v2/subject_collection/3762/items?start=0&count=50&items_only=1&for_mobile=1",
-        "referer": "https://m.douban.com/subject_collection/3762?dt_dapp=1",
+        "name": "冷门佳作-2020高分榜",
+        "url": "https://m.douban.com/rexxar/api/v2/subject_collection/ECGY5FDUA/items?start=0&count=50&items_only=1&for_mobile=1",
+        "referer": "https://m.douban.com/subject_collection/ECGY5FDUA?dt_dapp=1",
     },
     {
         "name": "历代奥斯卡获奖影片",
@@ -169,5 +169,4 @@ DoubanVideoTopList = [
 
 ]
 
-USERNAME = '*******'
-PASSWORD = '*******'
+
